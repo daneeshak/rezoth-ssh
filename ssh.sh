@@ -113,15 +113,6 @@ accept = 444
 connect = 22
 EOF
 
-#Genarating a self signed certificate for stunnel
-
-openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 \
-    -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com" \
-    -out stunnel.pem  -keyout stunnel.pem
-
-cp stunnel.pem /etc/stunnel/stunnel.pem
-chmod 644 /etc/stunnel/stunnel.pem
-
 #Enable overide stunnel default
 
 cp /etc/default/stunnel4 /etc/default/stunnel4.backup
